@@ -68,7 +68,7 @@
                     <a href="#windows-guide" class="text-gray-600 hover:text-buildBlack font-medium transition-colors">Windows Guide</a>
                     <a href="#mac-guide" class="text-gray-600 hover:text-buildBlack font-medium transition-colors">Mac Guide</a>
                 </div>
-                <a href="#important-notice" class="text-sm text-gray-600 hover:text-buildBlack font-medium transition-colors">Important Notice</a>
+                <a href="mailto:praveenvaduvanathan@gmail.com" class="text-sm text-gray-600 hover:text-buildBlack font-medium transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -77,7 +77,7 @@
     <section class="hero-gradient pt-16 pb-24 text-center px-4 border-b border-gray-200">
         <div class="max-w-5xl mx-auto">
             <div id="download" class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="https://github.com/vaduvanathan/Build_Viewer/releases/download/windowsv1.1/Build_Viewer.exe" class="flex items-center justify-center gap-3 bg-buildBlack hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                <a href="https://github.com/vaduvanathan/Build_Viewer/releases/download/windowsv1.1/Build_Viewer.exe" data-platform="Windows" class="download-trigger flex items-center justify-center gap-3 bg-buildBlack hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
                     <i class="fab fa-windows text-xl"></i>
                     <div class="text-left">
                         <div class="text-xs font-normal text-gray-300">Download for</div>
@@ -85,7 +85,7 @@
                     </div>
                 </a>
                 
-                <a href="https://github.com/vaduvanathan/Build_Viewer/releases/download/macv1.1/app_main.zip" class="flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-buildBlack border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold transition-all shadow-sm hover:shadow-md w-full sm:w-auto">
+                <a href="https://github.com/vaduvanathan/Build_Viewer/releases/download/macv1.1/app_main.zip" data-platform="macOS" class="download-trigger flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-buildBlack border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold transition-all shadow-sm hover:shadow-md w-full sm:w-auto">
                     <i class="fab fa-apple text-xl"></i>
                     <div class="text-left">
                         <div class="text-xs font-normal text-gray-500">Download for</div>
@@ -115,17 +115,30 @@
         </div>
     </section>
 
-    <section id="important-notice" class="py-10 px-4 bg-white border-b border-gray-200">
-        <div class="max-w-5xl mx-auto rounded-2xl border border-amber-200 bg-amber-50 p-6 md:p-8">
-            <h3 class="text-2xl font-bold text-buildBlack mb-3">Important Notice</h3>
-            <p class="text-gray-700 leading-relaxed mb-2">
-                This tool is for reference only. It is not an official tool and does not directly represent actual good hours.
-            </p>
-            <p class="text-gray-700 leading-relaxed">
-                If you face any issue during installation, contact me at <span class="font-semibold text-buildBlack">praveenvaduvanathan@gmail.com</span>.
-            </p>
+    <div id="warning-modal" class="fixed inset-0 z-[60] hidden">
+        <div id="warning-backdrop" class="absolute inset-0 bg-black/55"></div>
+        <div class="relative min-h-screen flex items-center justify-center px-4">
+            <div class="w-full max-w-xl rounded-2xl bg-white border border-gray-200 shadow-2xl p-6 md:p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center">
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-buildBlack">Important Warning</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    You are about to download the <span id="modal-platform" class="font-semibold text-buildBlack">app</span> installer.
+                    This tool is for reference only. It is not official and does not directly represent actual good hours.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    If you face issues during installation, contact me at <span class="font-semibold text-buildBlack">praveenvaduvanathan@gmail.com</span>.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 sm:justify-end">
+                    <button id="cancel-download" class="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium">Cancel</button>
+                    <button id="confirm-download" class="px-5 py-2.5 rounded-lg bg-buildBlack text-white hover:bg-gray-800 font-medium">I Understand, Continue Download</button>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
     <!-- App Dashboard Preview Section -->
     <section class="max-w-6xl mx-auto px-4 -mt-16 mb-24 relative z-10">
@@ -290,6 +303,40 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const warningModal = document.getElementById('warning-modal');
+        const warningBackdrop = document.getElementById('warning-backdrop');
+        const modalPlatform = document.getElementById('modal-platform');
+        const confirmDownload = document.getElementById('confirm-download');
+        const cancelDownload = document.getElementById('cancel-download');
+        const downloadTriggers = document.querySelectorAll('.download-trigger');
+        let pendingDownloadUrl = '';
+
+        function closeWarningModal() {
+            warningModal.classList.add('hidden');
+            pendingDownloadUrl = '';
+        }
+
+        downloadTriggers.forEach((trigger) => {
+            trigger.addEventListener('click', (event) => {
+                event.preventDefault();
+                pendingDownloadUrl = trigger.getAttribute('href') || '';
+                modalPlatform.textContent = trigger.dataset.platform || 'app';
+                warningModal.classList.remove('hidden');
+            });
+        });
+
+        confirmDownload.addEventListener('click', () => {
+            if (pendingDownloadUrl) {
+                window.location.href = pendingDownloadUrl;
+            }
+            closeWarningModal();
+        });
+
+        cancelDownload.addEventListener('click', closeWarningModal);
+        warningBackdrop.addEventListener('click', closeWarningModal);
+    </script>
 
 </body>
 </html>
