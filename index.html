@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Viewer | Download for Windows & Mac</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        buildBlack: '#1a1a1a',
+                        buildBlue: '#3b82f6',
+                        buildGray: '#f3f4f6',
+                        buildBorder: '#e5e7eb',
+                        buildGreen: '#10b981',
+                        buildRed: '#ef4444',
+                        buildYellow: '#f59e0b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+        .feature-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="border-b border-buildBorder bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 border-2 border-buildBlack rounded-xl flex items-center justify-center font-bold text-sm tracking-tighter">
+                        build.
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-buildBlack">Build Viewer</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-buildBlack font-medium transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-buildBlack font-medium transition-colors">How it Works</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#download" class="bg-buildBlack hover:bg-gray-800 text-white px-5 py-2.5 rounded-lg font-medium transition-colors duration-200">
+                        Download Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-32 text-center px-4">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-medium text-sm mb-6 border border-blue-100">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                v1.0 Now Available
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-buildBlack tracking-tight mb-6 leading-tight">
+                Your Industrial Data, <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-buildBlack to-gray-500">Visualized Perfectly.</span>
+            </h1>
+            
+            <p class="text-xl text-gray-500 mb-10 max-w-2xl leading-relaxed">
+                The ultimate desktop application for Windows and Mac to calculate averages, analyze OPS data, and manage SD card storage for your construction and factory assets.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://github.com/vaduvanathan/Build_Viewer/releases/latest" class="flex items-center justify-center gap-3 bg-buildBlack hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                    <i class="fab fa-windows text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-xs font-normal text-gray-300">Download for</div>
+                        <div class="text-lg">Windows</div>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/vaduvanathan/Build_Viewer/releases/latest" class="flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-buildBlack border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold transition-all shadow-sm hover:shadow-md w-full sm:w-auto">
+                    <i class="fab fa-apple text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-xs font-normal text-gray-500">Download for</div>
+                        <div class="text-lg">macOS</div>
+                    </div>
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">Requires Windows 10+ or macOS 11.0+</p>
+        </div>
+    </section>
+
+    <!-- App Dashboard Preview Section -->
+    <section class="max-w-6xl mx-auto px-4 -mt-16 mb-24 relative z-10">
+        <div class="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-gray-100 p-8">
+            <div class="flex flex-col items-center justify-center py-10 border-2 border-dashed border-gray-200 rounded-xl bg-gray-50">
+                <div class="w-16 h-16 border bg-white rounded-2xl flex items-center justify-center font-bold text-lg tracking-tighter mb-4 shadow-sm">
+                    build.
+                </div>
+                <h3 class="text-2xl font-bold text-buildBlack mb-1">Build Viewer</h3>
+                <p class="text-sm text-gray-500 uppercase tracking-widest mb-8">BUILD.AI AVERAGE CALCULATOR</p>
+                
+                <p class="text-gray-400 mb-6">Insert SD card to get started</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white border border-gray-100 p-8 rounded-xl shadow-sm w-full max-w-4xl mb-10">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-buildYellow mb-2">0.0</div>
+                        <div class="text-sm text-gray-500">Total Hours</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-buildGreen mb-2">0.0</div>
+                        <div class="text-sm text-gray-500">Good Hours</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-buildRed mb-2">0.0</div>
+                        <div class="text-sm text-gray-500">Bad Hours</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-buildBlack mb-2">0</div>
+                        <div class="text-sm text-gray-500">Total Clips</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 w-full max-w-3xl">
+                    <button class="bg-buildBlack text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-gray-800 transition">
+                        <i class="fas fa-calculator"></i> Calculate Average
+                    </button>
+                    <button class="bg-white border border-gray-200 text-buildBlack px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-gray-50 transition">
+                        <i class="fas fa-play"></i> Play Video
+                    </button>
+                    <button class="bg-buildBlue text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-blue-600 transition">
+                        <i class="fas fa-file-alt"></i> OPS Data
+                    </button>
+                    <button class="bg-gray-800 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-gray-700 transition">
+                        <i class="fas fa-hdd"></i> Space Checker
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildBlack mb-4">Everything you need to analyze operations.</h2>
+                <p class="text-lg text-gray-500">Build Viewer seamlessly connects with your SD cards to provide immediate insights into factory and shift performance.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-50 text-buildBlue rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildBlack mb-3">Average Calculator</h3>
+                    <p class="text-gray-500 leading-relaxed">Instantly calculate Good Hours, Bad Hours, and Total Hours from your deployment media. View clear, color-coded metrics at a glance.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-12 h-12 bg-green-50 text-buildGreen rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildBlack mb-3">SD Space Checker</h3>
+                    <p class="text-gray-500 leading-relaxed">Monitor Total Space, Used Space, and Free Space on your cards. Automatically calculates Optimal Recording Time Left.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-2xl border border-gray-100">
+                    <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildBlack mb-3">OPS Sessions</h3>
+                    <p class="text-gray-500 leading-relaxed">Log operations sessions with specific metadata: Factory Name, Department, Shift Details, and Operator counts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buildBlack text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-6 md:mb-0">
+                    <div class="w-8 h-8 border border-gray-600 rounded-lg flex items-center justify-center font-bold text-xs">
+                        build.
+                    </div>
+                    <span class="font-bold text-xl">Build Viewer</span>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://www.build.ai/" target="_blank" class="text-gray-400 hover:text-white transition">Visit Build.ai Company Website</a>
+                    <a href="https://github.com/vaduvanathan/Build_Viewer" target="_blank" class="text-gray-400 hover:text-white transition">GitHub Repository</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center md:text-left text-gray-500 text-sm flex flex-col md:flex-row justify-between">
+                <p>&copy; 2026 Build.ai. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Developed for seamless operational data viewing.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
