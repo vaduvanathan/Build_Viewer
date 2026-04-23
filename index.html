@@ -41,6 +41,14 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
+        .guide-image {
+            width: 100%;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            background: #f8fafc;
+            max-height: 440px;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
@@ -57,7 +65,7 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#features" class="text-gray-600 hover:text-buildBlack font-medium transition-colors">Features</a>
-                    <a href="#how-it-works" class="text-gray-600 hover:text-buildBlack font-medium transition-colors">How it Works</a>
+                    <a href="#windows-guide" class="text-gray-600 hover:text-buildBlack font-medium transition-colors">Windows Guide</a>
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#download" class="bg-buildBlack hover:bg-gray-800 text-white px-5 py-2.5 rounded-lg font-medium transition-colors duration-200">
@@ -190,6 +198,51 @@
                     <h3 class="text-xl font-bold text-buildBlack mb-3">OPS Sessions</h3>
                     <p class="text-gray-500 leading-relaxed">Log operations sessions with specific metadata: Factory Name, Department, Shift Details, and Operator counts.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Windows Installation Guide -->
+    <section id="windows-guide" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildBlack mb-4">Windows Installation Guide</h2>
+                <p class="text-lg text-gray-500">Follow these exact steps to install Build Viewer safely when Windows shows SmartScreen warnings for new apps.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <article class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                    <p class="text-sm font-semibold text-buildBlue mb-3">Step 1</p>
+                    <h3 class="text-2xl font-bold text-buildBlack mb-3">Download the installer</h3>
+                    <p class="text-gray-600 mb-5">Click <strong>Download for Windows</strong> on this website. In Edge/Chrome downloads panel, keep the file if you see a warning that the app is not commonly downloaded.</p>
+                    <img class="guide-image" src="assets/windows-guide/windows-step-1-download-warning.png" alt="Browser warns that Build_Viewer.exe is not commonly downloaded.">
+                </article>
+
+                <article class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                    <p class="text-sm font-semibold text-buildBlue mb-3">Step 2</p>
+                    <h3 class="text-2xl font-bold text-buildBlack mb-3">Choose Keep anyway</h3>
+                    <p class="text-gray-600 mb-5">Open the three-dot menu in Downloads and select <strong>Keep</strong>. If prompted, choose <strong>Keep anyway</strong> to retain the installer.</p>
+                    <img class="guide-image" src="assets/windows-guide/windows-step-2-keep-file.png" alt="Browser downloads menu with Keep option for Build_Viewer.exe.">
+                </article>
+
+                <article class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                    <p class="text-sm font-semibold text-buildBlue mb-3">Step 3</p>
+                    <h3 class="text-2xl font-bold text-buildBlack mb-3">Open from Downloads</h3>
+                    <p class="text-gray-600 mb-5">Locate <strong>Build_Viewer.exe</strong> in your Downloads folder and double-click it to start setup.</p>
+                    <img class="guide-image" src="assets/windows-guide/windows-step-3-open-downloads.png" alt="Build_Viewer.exe visible in Windows Downloads folder.">
+                </article>
+
+                <article class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                    <p class="text-sm font-semibold text-buildBlue mb-3">Step 4</p>
+                    <h3 class="text-2xl font-bold text-buildBlack mb-3">Bypass SmartScreen safely</h3>
+                    <p class="text-gray-600 mb-5">If Windows shows <strong>Windows protected your PC</strong>, click <strong>More info</strong> and then <strong>Run anyway</strong>.</p>
+                    <img class="guide-image" src="assets/windows-guide/windows-step-4-run-anyway.png" alt="Windows SmartScreen dialog with Run anyway option.">
+                </article>
+            </div>
+
+            <div class="mt-10 bg-blue-50 border border-blue-100 rounded-2xl p-6">
+                <h4 class="text-lg font-bold text-buildBlack mb-2">Security note</h4>
+                <p class="text-gray-700">SmartScreen warnings are common for newly released unsigned apps. Download only from the official Build Viewer GitHub release page.</p>
             </div>
         </div>
     </section>
