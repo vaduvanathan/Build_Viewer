@@ -274,9 +274,53 @@
     </section>
 
     <section id="mac-guide" class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-buildBlack mb-4">Mac Installation Guide</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Mac guide section is ready. You can add your screenshots and steps next, and I can format it in the same style as the Windows guide.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildBlack mb-4">Build Viewer - Installation Guide (macOS)</h2>
+                <p class="text-lg text-gray-600">Follow these steps to install Build Viewer safely on macOS.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <article class="bg-white border border-gray-200 rounded-2xl p-6">
+                    <p class="text-sm font-semibold text-buildBlue mb-3">Step 1</p>
+                    <h3 class="text-2xl font-bold text-buildBlack mb-3">Extract and move the app</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">Double-click the .zip file provided to extract its contents.</p>
+                    <p class="text-gray-700 leading-relaxed mb-3">Once extracted, you will see the Build Viewer application.</p>
+                    <p class="text-gray-700 leading-relaxed">Drag and move the app to your Desktop or into your Applications folder for easy access.</p>
+                </article>
+
+                <article class="bg-white border border-gray-200 rounded-2xl p-6">
+                    <p class="text-sm font-semibold text-buildBlue mb-3">Step 2</p>
+                    <h3 class="text-2xl font-bold text-buildBlack mb-3">Open the app for the first time</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">Do not double-click the app initially.</p>
+                    <p class="text-gray-700 leading-relaxed mb-3">Instead, right-click (or Control + click) the app and select <strong>Open</strong>.</p>
+                    <p class="text-gray-700 leading-relaxed">If a security warning says the app is from an unidentified developer, click <strong>Open</strong> again to continue.</p>
+                </article>
+            </div>
+
+            <div class="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-buildBlack mb-3">Fix for "App is Damaged" Error</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">If macOS shows that the app is "damaged and should be moved to the bin", follow these steps:</p>
+                <ol class="list-decimal list-inside text-gray-700 space-y-2 mb-5">
+                    <li>Open the Terminal application on your Mac.</li>
+                    <li>Type this command and keep one space at the end:</li>
+                </ol>
+                <div class="bg-buildBlack text-white rounded-lg px-4 py-3 font-mono text-sm mb-5">xattr -cr </div>
+                <ol class="list-decimal list-inside text-gray-700 space-y-2" start="3">
+                    <li>Drag and drop the Build Viewer app into the Terminal window to insert the file path automatically.</li>
+                    <li>Press Enter.</li>
+                </ol>
+            </div>
+
+            <div class="mt-8 bg-white border border-gray-200 rounded-2xl p-6 md:p-8">
+                <h3 class="text-xl font-bold text-buildBlack mb-3">Useful macOS Shortcuts</h3>
+                <ul class="text-gray-700 space-y-2">
+                    <li><strong>Open Spotlight:</strong> Command + Space</li>
+                    <li><strong>Launch Terminal quickly:</strong> Command + Space, type Terminal, press Enter</li>
+                    <li><strong>Copy app file path (Finder):</strong> Select app, then press Option + Command + C</li>
+                    <li><strong>Right-click alternative:</strong> Hold Control and click the app</li>
+                </ul>
+            </div>
         </div>
     </section>
 
