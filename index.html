@@ -49,6 +49,41 @@
             max-height: 440px;
             object-fit: contain;
         }
+        .app-shot {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 0.9rem;
+            border: 1px solid #d1d5db;
+            background: #eef2f7;
+            object-fit: contain;
+            padding: 0.25rem;
+        }
+        .app-shot-frame {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 0.75rem;
+        }
+        .app-shot-placeholder {
+            display: none;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 0.9rem;
+            border: 1px dashed #cbd5e1;
+            background: #f8fafc;
+            color: #64748b;
+            font-size: 0.95rem;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+        }
+        @media (max-width: 640px) {
+            .app-shot,
+            .app-shot-placeholder {
+                aspect-ratio: 4 / 3;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 antialiased">
@@ -140,52 +175,28 @@
         </div>
     </div>
 
-    <!-- App Dashboard Preview Section -->
-    <section class="max-w-6xl mx-auto px-4 -mt-16 mb-24 relative z-10">
-        <div class="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-gray-100 p-8">
-            <div class="flex flex-col items-center justify-center py-10 border-2 border-dashed border-gray-200 rounded-xl bg-gray-50">
-                <div class="w-16 h-16 border bg-white rounded-2xl flex items-center justify-center font-bold text-lg tracking-tighter mb-4 shadow-sm">
-                    build.
-                </div>
-                <h3 class="text-2xl font-bold text-buildBlack mb-1">Build Viewer</h3>
-                <p class="text-sm text-gray-500 uppercase tracking-widest mb-8">BUILD.AI AVERAGE CALCULATOR</p>
-                
-                <p class="text-gray-400 mb-6">Insert SD card to get started</p>
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white border border-gray-100 p-8 rounded-xl shadow-sm w-full max-w-4xl mb-10">
-                    <div class="text-center">
-                        <div class="text-5xl font-bold text-buildYellow mb-2">0.0</div>
-                        <div class="text-sm text-gray-500">Total Hours</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-bold text-buildGreen mb-2">0.0</div>
-                        <div class="text-sm text-gray-500">Good Hours</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-bold text-buildRed mb-2">0.0</div>
-                        <div class="text-sm text-gray-500">Bad Hours</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-bold text-buildBlack mb-2">0</div>
-                        <div class="text-sm text-gray-500">Total Clips</div>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-4 w-full max-w-3xl">
-                    <button class="bg-buildBlack text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-gray-800 transition">
-                        <i class="fas fa-calculator"></i> Calculate Average
-                    </button>
-                    <button class="bg-white border border-gray-200 text-buildBlack px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-gray-50 transition">
-                        <i class="fas fa-play"></i> Play Video
-                    </button>
-                    <button class="bg-buildBlue text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-blue-600 transition">
-                        <i class="fas fa-file-alt"></i> OPS Data
-                    </button>
-                    <button class="bg-gray-800 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-gray-700 transition">
-                        <i class="fas fa-hdd"></i> Space Checker
-                    </button>
-                </div>
-            </div>
+    <!-- App Screens Section -->
+    <section class="max-w-7xl mx-auto px-4 mt-10 mb-20 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-buildBlack mb-3">Live App Screens</h2>
+            <p class="text-gray-600 text-lg">Real screenshots from Build Viewer for Space Checker, Average Calculator, and OPS Data.</p>
+        </div>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+            <article class="app-shot-frame">
+                <h3 class="text-lg font-semibold text-buildBlack mb-3">Space Checker</h3>
+                <img class="app-shot app-preview" src="app-space-checker.png" alt="Build Viewer Space Checker screen with total space, used space, and free space." data-fallback="Add app-space-checker.png to repo root">
+                <div class="app-shot-placeholder"></div>
+            </article>
+            <article class="app-shot-frame">
+                <h3 class="text-lg font-semibold text-buildBlack mb-3">Average Calculator</h3>
+                <img class="app-shot app-preview" src="app-average-calculator.png" alt="Build Viewer Average Calculator screen with good, bad, and total hours." data-fallback="Add app-average-calculator.png to repo root">
+                <div class="app-shot-placeholder"></div>
+            </article>
+            <article class="app-shot-frame md:col-span-2 lg:col-span-1">
+                <h3 class="text-lg font-semibold text-buildBlack mb-3">OPS Data</h3>
+                <img class="app-shot app-preview" src="app-ops-data.png" alt="Build Viewer OPS Data screen with role, operator ID, and report table." data-fallback="Add app-ops-data.png to repo root">
+                <div class="app-shot-placeholder"></div>
+            </article>
         </div>
     </section>
 
@@ -381,6 +392,20 @@
 
         cancelDownload.addEventListener('click', closeWarningModal);
         warningBackdrop.addEventListener('click', closeWarningModal);
+
+        const appPreviews = document.querySelectorAll('.app-preview');
+        appPreviews.forEach((preview) => {
+            preview.addEventListener('error', () => {
+                const container = preview.parentElement;
+                const placeholder = container ? container.querySelector('.app-shot-placeholder') : null;
+                if (!placeholder) {
+                    return;
+                }
+                placeholder.textContent = preview.dataset.fallback || 'Screenshot not found';
+                preview.style.display = 'none';
+                placeholder.style.display = 'flex';
+            });
+        });
     </script>
 
 </body>
